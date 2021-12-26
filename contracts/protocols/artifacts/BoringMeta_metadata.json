@@ -1,0 +1,183 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "MetaUpdate",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "getDailyMeta",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "usedGas",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "numberOfBlocks",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct IBoringMeta.Meta",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLastDayMeta",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "usedGas",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "numberOfBlocks",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct IBoringMeta.Meta",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "usedGas",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numberOfBlocks",
+						"type": "uint256"
+					}
+				],
+				"name": "updateDailyMeta",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Set contract deployer as owner"
+				},
+				"getDailyMeta(uint256)": {
+					"details": "Get particular day meta",
+					"params": {
+						"timestamp": "query day in timestamp format"
+					}
+				},
+				"getLastDayMeta()": {
+					"details": "Get pervious day meta"
+				},
+				"updateDailyMeta(uint256,uint256,uint256)": {
+					"details": "Store updated meta in variable",
+					"params": {
+						"numberOfBlocks": "generated blocks",
+						"timestamp": "timestamp",
+						"usedGas": "total used gas"
+					}
+				}
+			},
+			"title": "BoringMeta",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/protocols/BoringMeta.sol": "BoringMeta"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/IBoringMeta.sol": {
+			"keccak256": "0xe8d4d3f7d8d3d32178ebfffa9c2008218da0d36cd0e403c23bfeee4526096081",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://4286e7f144c8369014b8ba9e01773553ca225604740c5c36045178a2290949dc",
+				"dweb:/ipfs/QmYNkzUnmsg9UXjrJ4WGP9rnsUMVCx4mNh5w5UAk6xt4oZ"
+			]
+		},
+		"contracts/protocols/BoringMeta.sol": {
+			"keccak256": "0xcdc0e783d2399764f72f4b362a30e82458f72a15e970e17d18127337937a5503",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://45762495c20a9b13a6c00a432cab9c355e6c9f009c26e5f6d9fdc9b83e35d44c",
+				"dweb:/ipfs/QmSE3uNy8HmEhHN6EkdbketoSSLN86YTAEJWFRa4PNq5wA"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,135 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "getDailyMeta",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "usedGas",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "numberOfBlocks",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct IBoringMeta.Meta",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLastDayMeta",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "usedGas",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "numberOfBlocks",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct IBoringMeta.Meta",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "usedGas",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numberOfBlocks",
+						"type": "uint256"
+					}
+				],
+				"name": "updateDailyMeta",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/interfaces/IBoringMeta.sol": "IBoringMeta"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/interfaces/IBoringMeta.sol": {
+			"keccak256": "0xe8d4d3f7d8d3d32178ebfffa9c2008218da0d36cd0e403c23bfeee4526096081",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://4286e7f144c8369014b8ba9e01773553ca225604740c5c36045178a2290949dc",
+				"dweb:/ipfs/QmYNkzUnmsg9UXjrJ4WGP9rnsUMVCx4mNh5w5UAk6xt4oZ"
+			]
+		}
+	},
+	"version": 1
+}
