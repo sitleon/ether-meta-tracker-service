@@ -5,13 +5,13 @@ import * as fastq from 'fastq';
 import { PrismaService } from '../prisma/prisma.service';
 import { transformToDto } from '../utils/transfer-eth-obj';
 
-import { CreateBlockDto } from './ethereum.dto';
-import type { blockMeta } from './ethereum.interface';
+import { CreateBlockDto } from './eth-provider.dto';
+import type { blockMeta } from './eth-provider.interface';
 
 import * as moment from 'moment';
 
 @Injectable()
-export class EthereumService {
+export class EthProviderService {
     private readonly provider: ethers.providers.Provider;
     private readonly fetchQueue = fastq.promise((fn: () => any) => fn(), 10);
 
@@ -62,8 +62,8 @@ export class EthereumService {
                 },
                 where: {
                     timestamp: {
-                        gte: moment.unix(timestamp).subtract(1, 'days').unix(),
-                        lte: timestamp,
+                        gte: timestamp,
+                        lte: moment.unix(timestamp).add(1, 'days').unix(),
                     },
                 },
                 skip,
@@ -86,5 +86,9 @@ export class EthereumService {
             numberOfBlocks: blocks.length,
             gasUsed,
         };
+    }
+
+    getProvider(): ethers.providers.Provider {
+        return this.provider;
     }
 }

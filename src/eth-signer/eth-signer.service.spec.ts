@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { EthereumService } from './ethereum.service';
+import { EthSignerService } from './eth-signer.service';
 
-describe('EthereumService', () => {
-    let service: EthereumService;
+describe('EthSignerService', () => {
+    let service: EthSignerService;
 
     beforeEach(async () => {
         const module: TestingModule = await Test.createTestingModule({
-            providers: [EthereumService],
+            providers: [EthSignerService],
         }).compile();
 
-        service = module.get<EthereumService>(EthereumService);
+        service = module.get<EthSignerService>(EthSignerService);
     });
 
     it('should be defined', () => {
