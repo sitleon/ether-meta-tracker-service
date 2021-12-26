@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Block {
+  hash          String   @id @db.VarChar(66)
+  parentHash    String   @db.VarChar(66)
+  number        BigInt   @db.BigInt
+  timestamp     BigInt   @db.BigInt
+  nonce         String   @db.VarChar(18)
+  difficulty    String?  @db.VarChar(100)
+  gasLimit      String   @db.VarChar(100)
+  gasUsed       String   @db.VarChar(100)
+  miner         String   @db.VarChar(42)
+  extraData     String?  @db.Text
+  baseFeePerGas String?  @db.VarChar(100)
+  createdAt     DateTime @default(now()) @db.DateTime(0)
+
+  transactions Transaction[]
+
+  @@index([parentHash])
+  @@index([number])
+  @@index([timestamp])
+  @@index([createdAt])
+  @@map("blocks")
+}
+
+model Transaction {
+  hash          String   @id @db.VarChar(66)
+  to            String?  @db.VarChar(42)
+  from          String   @db.VarChar(42)
+  nonce         BigInt   @db.BigInt
+  gasLimit      String   @db.VarChar(100)
+  gasPrice      String   @db.VarChar(100)
+  data          String   @db.Text
+  value         String   @db.Text
+  r             String   @db.VarChar(100)
+  s             String   @db.VarChar(100)
+  v             BigInt   @db.BigInt
+  type          BigInt?  @db.BigInt
+  timestamp     BigInt?  @db.BigInt
+  confirmations BigInt?  @db.BigInt
+  raw           String?  @db.Text
+  createdAt     DateTime @default(now()) @db.DateTime(0)
+
+  block       Block  @relation(fields: [blockHash], references: [hash])
+  blockNumber BigInt @db.BigInt
+  blockHash   String @db.VarChar(66)
+
+  @@index([hash])
+  @@index([blockNumber])
+  @@index([blockHash])
+  @@index([to, from])
+  @@index([timestamp])
+  @@index([createdAt])
+  @@map("transactions")
+}
